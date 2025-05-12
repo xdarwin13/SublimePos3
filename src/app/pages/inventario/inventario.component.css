@@ -1,0 +1,108 @@
+.inventario-container {
+    padding: 20px;
+    position: relative;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .products-table {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .table-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .pagination-controls {
+    display: flex;
+  }
+  
+  .btn-pagination {
+    background: none;
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-pagination:hover {
+    background-color: #e9ecef;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .btn-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .btn-edit:hover {
+    background-color: #e9ecef;
+  }
+  
+  .btn-delete:hover {
+    background-color: #f8d7da;
+  }
+  
+  .action-buttons {
+    margin-top: 20px;
+  }
+  
+  .btn-export {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+  
+  .btn-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+  
+  .btn-floating:hover {
+    background-color: #0069d9;
+  }

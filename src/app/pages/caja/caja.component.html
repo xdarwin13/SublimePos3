@@ -1,0 +1,69 @@
+<div class="caja-container">
+    <div class="action-buttons">
+      <button class="btn-action btn-income" (click)="registerIncome()">REGISTRAR INGRESO</button>
+      <button class="btn-action btn-expense" (click)="registerExpense()">REGISTRAR EGRESO</button>
+      <button class="btn-filter" (click)="filterTransactions()">FILTRAR</button>
+    </div>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div class="transactions-container">
+      <div class="transactions-section">
+        <div class="section-header">
+          <h3>$ {{ ingresos.total.toFixed(2) }} <span>Ingresos</span></h3>
+        </div>
+        <div class="transactions-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Monto</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="ingresos.transactions.length === 0">
+                <td colspan="4" class="no-data">No data available</td>
+              </tr>
+              <tr *ngFor="let transaction of ingresos.transactions">
+                <td>{{ transaction.monto }}</td>
+                <td>{{ transaction.descripcion }}</td>
+                <td>{{ transaction.fecha }}</td>
+                <td>{{ transaction.usuario }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+      <div class="transactions-section">
+        <div class="section-header">
+          <h3>$ {{ egresos.total.toFixed(2) }} <span>Egresos</span></h3>
+        </div>
+        <div class="transactions-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Monto</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="egresos.transactions.length === 0">
+                <td colspan="4" class="no-data">No data available</td>
+              </tr>
+              <tr *ngFor="let transaction of egresos.transactions">
+                <td>{{ transaction.monto }}</td>
+                <td>{{ transaction.descripcion }}</td>
+                <td>{{ transaction.fecha }}</td>
+                <td>{{ transaction.usuario }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

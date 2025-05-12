@@ -1,0 +1,10 @@
+<div class="search-bar">
+    <div class="search-icon">🔍</div>
+    <input 
+      type="text" 
+      [(ngModel)]="value" 
+      [placeholder]="placeholder" 
+      (keyup.enter)="onSearch()"
+      class="search-input"
+    >
+  </div>

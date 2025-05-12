@@ -1,0 +1,28 @@
+<div class="clientes-container">
+    <div class="clientes-header">
+      <h2>Clientes</h2>
+      <div class="search-container">
+        <input type="text" placeholder="Buscar cliente..." class="search-input">
+        <button class="search-button">🔍</button>
+      </div>
+    </div>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div class="clientes-list">
+      <div *ngFor="let cliente of clientes" class="cliente-card">
+        <div class="cliente-info">
+          <div class="cliente-name">{{ cliente.nombre }}</div>
+          <div class="cliente-phone">{{ cliente.telefono }}</div>
+        </div>
+        <div class="cliente-actions">
+          <button class="btn-action btn-call" (click)="onCallClient(cliente)">📞</button>
+          <button class="btn-action btn-info" (click)="onInfoClient(cliente)">ℹ️</button>
+          <button class="btn-action btn-edit" (click)="onEditClient(cliente)">✏️</button>
+          <button class="btn-action btn-delete" (click)="onDeleteClient(cliente)">🗑️</button>
+        </div>
+      </div>
+    </div>
+  
+    <button class="btn-floating">+</button>
+  </div>

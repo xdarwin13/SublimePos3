@@ -1,0 +1,46 @@
+<div class="vender-container">
+    <app-search-bar 
+      [placeholder]="searchPlaceholder"
+      (search)="onSearch($event)"
+    ></app-search-bar>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div class="total-section">
+      <h3>Total de la venta: ${{ totalVenta.toFixed(2) }}</h3>
+    </div>
+  
+    <div class="products-table">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let column of columns">{{ column.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="products.length === 0">
+            <td [attr.colspan]="columns.length">
+              <app-empty-state 
+                title="Lista vacía" 
+                message="Aquí aparecerá la lista de productos para la venta" 
+                icon="shopping-cart"
+                color="primary"
+              ></app-empty-state>
+            </td>
+          </tr>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.codigo }}</td>
+            <td>{{ product.descripcion }}</td>
+            <td>{{ product.cantidad }}</td>
+            <td>{{ product.precio }}</td>
+            <td>{{ product.total }}</td>
+            <td>
+              <button class="btn-action btn-edit">✏️</button>
+              <button class="btn-action btn-delete">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

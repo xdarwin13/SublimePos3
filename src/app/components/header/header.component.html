@@ -1,0 +1,10 @@
+<header class="header">
+    <div class="section-title">
+      <span class="main-title">{{ currentSection }}</span>
+      <span *ngIf="currentSubsection" class="subsection-title">- {{ currentSubsection }}</span>
+    </div>
+    <div class="user-info">
+      <span>Hola, {{ username }} </span>
+      <span class="user-icon">👤</span>
+    </div>
+  </header>

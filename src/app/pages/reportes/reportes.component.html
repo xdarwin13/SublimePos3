@@ -1,0 +1,54 @@
+<div class="reportes-container">
+    <div class="filter-container">
+      <button class="filter-button" (click)="filterReport()">FILTRAR</button>
+    </div>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div *ngIf="isVentasContado" class="ventas-contado">
+      <div class="summary-row">
+        <div class="summary-item">
+          <h3>$ {{ totalUtilidad.toFixed(2) }} <span>Utilidad</span></h3>
+        </div>
+        <div class="summary-item">
+          <h3>$ {{ totalVendido.toFixed(2) }} <span>Vendido</span></h3>
+        </div>
+      </div>
+  
+      <div class="ventas-table">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Monto</th>
+              <th>Utilidad</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Usuario</th>
+              <th>Reimprimir ticket</th>
+              <th>Anular venta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="ventasContado.length === 0">
+              <td colspan="8" class="no-data">No data available</td>
+            </tr>
+            <tr *ngFor="let venta of ventasContado">
+              <td>{{ venta.id }}</td>
+              <td>{{ venta.monto }}</td>
+              <td>{{ venta.utilidad }}</td>
+              <td>{{ venta.fecha }}</td>
+              <td>{{ venta.cliente }}</td>
+              <td>{{ venta.usuario }}</td>
+              <td>
+                <button class="btn-action btn-print">🖨️</button>
+              </td>
+              <td>
+                <button class="btn-action btn-cancel">❌</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

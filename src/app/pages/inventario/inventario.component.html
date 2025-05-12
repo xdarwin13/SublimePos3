@@ -1,0 +1,57 @@
+<div class="inventario-container">
+    <app-search-bar 
+      [placeholder]="searchPlaceholder"
+      (search)="onSearch($event)"
+    ></app-search-bar>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div class="products-table">
+      <div class="table-controls">
+        <div class="pagination-controls">
+          <button class="btn-pagination">◀</button>
+          <button class="btn-pagination">▶</button>
+        </div>
+      </div>
+  
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let column of columns">{{ column.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="products.length === 0">
+            <td [attr.colspan]="columns.length">
+              <app-empty-state 
+                title="No hay productos" 
+                message="No has registrado ningún producto. Agrega uno con el botón + de la esquina" 
+                icon="box"
+                color="primary"
+              ></app-empty-state>
+            </td>
+          </tr>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.codigo }}</td>
+            <td>{{ product.descripcion }}</td>
+            <td>{{ product.precio_compra }}</td>
+            <td>{{ product.precio_venta }}</td>
+            <td>{{ product.utilidad }}</td>
+            <td>{{ product.existencia }}</td>
+            <td>{{ product.stock }}</td>
+            <td>
+              <button class="btn-action btn-edit">✏️</button>
+              <button class="btn-action btn-delete">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="action-buttons">
+      <button class="btn-export" (click)="exportProducts()">Exportar o importar productos</button>
+    </div>
+  
+    <button class="btn-floating">+</button>
+  </div>

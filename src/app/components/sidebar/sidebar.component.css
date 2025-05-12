@@ -1,0 +1,112 @@
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-header {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .sidebar-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .sidebar-menu {
+    padding: 0;
+  }
+  
+  .sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu li {
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #212529;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .submenu-container {
+    position: relative;
+  }
+  
+  .submenu-icon {
+    margin-left: auto;
+    transition: transform 0.3s;
+  }
+  
+  .submenu-icon.rotated {
+    transform: rotate(180deg);
+  }
+  
+  .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #e9ecef;
+  }
+  
+  .submenu.expanded {
+    max-height: 500px;
+  }
+  
+  .submenu-item {
+    display: block;
+    padding: 10px 15px 10px 45px;
+    color: #212529;
+    text-decoration: none;
+  }
+  
+  .submenu-item:hover {
+    background-color: #dee2e6;
+  }
+  
+  .active {
+    background-color: #e9ecef;
+  }
+  
+  /* Icons */
+  .icon-help-circle:before { content: "?"; }
+  .icon-cloud:before { content: "☁"; }
+  .icon-home:before { content: "⌂"; }
+  .icon-grid:before { content: "▦"; }
+  .icon-box:before { content: "□"; }
+  .icon-shopping-cart:before { content: "🛒"; }
+  .icon-users:before { content: "👥"; }
+  .icon-dollar-sign:before { content: "$"; }
+  .icon-file-text:before { content: "📄"; }
+  .icon-bar-chart-2:before { content: "📊"; }
+  .icon-user:before { content: "👤"; }
+  .icon-more-horizontal:before { content: "⋯"; }
+  .icon-chevron-down:before { content: "▼"; }
+  .icon-file:before { content: "📄"; }
+  .icon-clipboard:before { content: "📋"; }
+  .icon-printer:before { content: "🖨"; }
+  .icon-settings:before { content: "⚙"; }
+  .icon-log-out:before { content: "↪"; }

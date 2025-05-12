@@ -1,0 +1,154 @@
+.productos-container {
+    padding: 20px;
+    position: relative;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .search-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .search-box {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .filter-box {
+    width: 200px;
+  }
+  
+  .category-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .productos-table {
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  .actions-cell {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .btn-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .btn-edit:hover {
+    background-color: #e9ecef;
+  }
+  
+  .btn-delete:hover {
+    background-color: #f8d7da;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn-secondary {
+    background: none;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #f0f7ff;
+  }
+  
+  .btn-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+  
+  .btn-floating:hover {
+    background-color: #0069d9;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .search-filter-container {
+      flex-direction: column;
+    }
+    
+    .filter-box {
+      width: 100%;
+    }
+    
+    .productos-table {
+      overflow-x: auto;
+    }
+  }

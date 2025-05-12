@@ -1,0 +1,61 @@
+.graficas-container {
+    padding: 20px;
+  }
+  
+  .section {
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .filter-container {
+    margin-bottom: 15px;
+  }
+  
+  .year-select {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .filter-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+  
+  .chart-container {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .empty-chart {
+    text-align: center;
+    color: #6c757d;
+  }
+  
+  .info-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .info-text {
+    font-size: 14px;
+  }

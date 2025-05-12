@@ -1,0 +1,66 @@
+<div class="productos-container">
+    <div class="search-filter-container">
+      <div class="search-box">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          placeholder="Buscar productos por nombre, código o descripción" 
+          class="search-input"
+        >
+        <button class="search-button" (click)="onSearch()">🔍</button>
+      </div>
+      
+      <div class="filter-box">
+        <select [(ngModel)]="selectedCategoria" class="category-select" (change)="onFilterByCategory()">
+          <option value="">Todas las categorías</option>
+          <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div class="productos-table">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let column of columns">{{ column.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="productos.length === 0">
+            <td [attr.colspan]="columns.length">
+              <app-empty-state 
+                title="No hay productos" 
+                message="No has registrado ningún producto. Agrega uno con el botón + de la esquina" 
+                icon="box"
+                color="primary"
+              ></app-empty-state>
+            </td>
+          </tr>
+          <tr *ngFor="let producto of productos">
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>${{ producto.precioCompra.toFixed(2) }}</td>
+            <td>${{ producto.precioVenta.toFixed(2) }}</td>
+            <td>{{ producto.existencia }}</td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.categoria }}</td>
+            <td class="actions-cell">
+              <button class="btn-action btn-edit" (click)="onEditProduct(producto)">✏️</button>
+              <button class="btn-action btn-delete" (click)="onDeleteProduct(producto)">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="action-buttons">
+      <button class="btn-secondary" (click)="exportProducts()">Exportar productos</button>
+      <button class="btn-secondary" (click)="importProducts()">Importar productos</button>
+      <button class="btn-secondary" (click)="printBarcodes()">Imprimir códigos de barras</button>
+    </div>
+  
+    <button class="btn-floating" (click)="onAddProduct()">+</button>
+  </div>

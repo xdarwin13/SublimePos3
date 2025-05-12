@@ -1,0 +1,56 @@
+<div class="graficas-container">
+    <div class="section">
+      <h2>Ventas por año</h2>
+      <div class="filter-container">
+        <select [(ngModel)]="selectedYear" class="year-select">
+          <option value="" disabled selected>Seleccione uno o más años para comparar</option>
+          <option *ngFor="let year of yearOptions" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+      <div class="chart-container">
+        <div class="empty-chart">
+          <div class="info-icon">ℹ️</div>
+          <div class="info-text">Seleccione uno o más años para mostrar la gráfica</div>
+        </div>
+      </div>
+    </div>
+  
+    <app-notification-banner></app-notification-banner>
+  
+    <div class="section">
+      <h2>Ventas por mes</h2>
+      <div class="filter-container">
+        <select class="year-select">
+          <option value="" disabled selected>Seleccione un año</option>
+          <option *ngFor="let year of yearOptions" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+      <div class="chart-container">
+        <div class="empty-chart">
+          <div class="info-icon">ℹ️</div>
+          <div class="info-text">Seleccione un año</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Productos más vendidos</h2>
+      <div class="filter-container">
+        <button class="filter-button">FILTRAR</button>
+      </div>
+      <div class="chart-container">
+        <div class="empty-chart">
+          <div class="info-text">No hay registros en el período</div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Productos menos vendidos</h2>
+      <div class="chart-container">
+        <div class="empty-chart">
+          <div class="info-text">No hay registros en el período</div>
+        </div>
+      </div>
+    </div>
+  </div>
