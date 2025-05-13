@@ -1,64 +1,106 @@
 .empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    text-align: center;
-    border-radius: 4px;
-    margin: 15px 0;
-  }
-  
-  .empty-state-primary {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .empty-state-secondary {
-    background-color: #6c757d;
-    color: white;
-  }
-  
-  .empty-state-success {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .empty-state-danger {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .empty-state-warning {
-    background-color: #ffc107;
-    color: #212529;
-  }
-  
-  .empty-state-info {
-    background-color: #17a2b8;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.empty-state-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.empty-state-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.empty-state-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.empty-state-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.empty-state-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.empty-state-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.empty-state-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.empty-state-title {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.empty-state-message {
+  margin: 0;
+  font-size: 16px;
+  max-width: 500px;
+}
+
+/* Icons */
+.icon-box:before { content: "□"; }
+.icon-shopping-cart:before { content: "🛒"; }
+.icon-users:before { content: "👥"; }
+.icon-dollar-sign:before { content: "$"; }
+.icon-file-text:before { content: "📄"; }
+.icon-alert-circle:before { content: "⚠"; }
+.icon-info:before { content: "ℹ"; }
+
+@media (max-width: 768px) {
+  .empty-state {
+    padding: 20px 10px;
   }
   
   .empty-state-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 10px;
   }
   
   .empty-state-title {
-    margin: 0 0 10px 0;
-    font-size: 24px;
+    font-size: 20px;
+    margin-bottom: 8px;
   }
   
   .empty-state-message {
-    margin: 0;
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .empty-state {
+    padding: 15px 8px;
   }
   
-  /* Icons */
-  .icon-box:before { content: "□"; }
-  .icon-shopping-cart:before { content: "🛒"; }
-  .icon-users:before { content: "👥"; }
-  .icon-dollar-sign:before { content: "$"; }
-  .icon-file-text:before { content: "📄"; }
-  .icon-alert-circle:before { content: "⚠"; }
-  .icon-info:before { content: "ℹ"; }
+  .empty-state-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .empty-state-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  .empty-state-message {
+    font-size: 12px;
+  }
+}

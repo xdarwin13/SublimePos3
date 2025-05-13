@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface MenuItem {
@@ -8,6 +8,7 @@ interface MenuItem {
   expanded?: boolean;
   children?: MenuItem[];
 }
+
 @Component({
   selector: 'app-sidebar',
   standalone: false,
@@ -15,57 +16,69 @@ interface MenuItem {
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-
-  
-  constructor(public router: Router) {}
+  @Input() collapsed = false;
+  @Input() isMobile = false;
+  @Output() closeSidebar = new EventEmitter<void>();
   
   storeName = 'Tienda';
   
   menuItems: MenuItem[] = [
-    { label: 'Ayuda', route: '/ayuda', icon: 'help-circle' },
-    { label: 'Usar en la nube', route: '/nube', icon: 'cloud' },
     { label: 'Inicio', route: '/inicio', icon: 'home' },
-    { label: 'Escritorio', route: '/escritorio', icon: 'grid' },
-    { label: 'Productos', route: '/productos', icon: 'box' },
-    { label: 'Vender', route: '/vender', icon: 'shopping-cart' },
-    { label: 'Clientes', route: '/clientes', icon: 'users' },
-    { label: 'Caja', route: '/caja', icon: 'dollar-sign' },
+    { label: 'Escritorio', route: '/escritorio', icon: 'dashboard' },
+    { label: 'Productos', route: '/productos', icon: 'inventory' },
+    { label: 'Vender', route: '/vender', icon: 'shopping_cart' },
+    { label: 'Clientes', route: '/clientes', icon: 'people' },
+    { label: 'Caja', route: '/caja', icon: 'point_of_sale' },
     { 
       label: 'Reportes', 
       route: '/reportes', 
-      icon: 'file-text',
+      icon: 'description',
       expanded: false,
       children: [
-        { label: 'Ventas al contado', route: '/reporte/ventas/contado', icon: 'file' },
-        { label: 'Apartados', route: '/reporte/apartados', icon: 'file' },
-        { label: 'Caja', route: '/reporte/caja', icon: 'file' },
-        { label: 'Productos con baja existencia', route: '/reporte/productos/baja', icon: 'file' },
-        { label: 'Inventario', route: '/reporte/inventario', icon: 'file' }
+        { label: 'Ventas al contado', route: '/reporte/ventas/contado', icon: 'receipt' },
+        { label: 'Apartados', route: '/reporte/apartados', icon: 'bookmark' },
+        { label: 'Caja', route: '/reporte/caja', icon: 'payments' },
+        { label: 'Productos con baja existencia', route: '/reporte/productos/baja', icon: 'inventory_2' },
+        { label: 'Inventario', route: '/reporte/inventario', icon: 'list_alt' }
       ]
     },
-    { label: 'Gráficas y estadísticas', route: '/graficas', icon: 'bar-chart-2' },
-    { label: 'Usuarios', route: '/usuarios', icon: 'user' },
+    { label: 'Gráficas y estadísticas', route: '/graficas', icon: 'bar_chart' },
+    { label: 'Usuarios', route: '/usuarios', icon: 'person' },
     { 
       label: 'Más', 
       route: '/mas', 
-      icon: 'more-horizontal',
+      icon: 'more_horiz',
       expanded: false,
       children: [
-        { label: 'Hacer inventario', route: '/hacer-inventario', icon: 'clipboard' },
-        { label: 'Imprimir códigos de barras', route: '/imprimir-codigos', icon: 'printer' },
+        { label: 'Hacer inventario', route: '/hacer-inventario', icon: 'inventory' },
+        { label: 'Imprimir códigos de barras', route: '/imprimir-codigos', icon: 'print' },
         { label: 'Ajustes', route: '/ajustes', icon: 'settings' },
-        { label: 'Ayuda', route: '/ayuda', icon: 'help-circle' },
-        { label: 'Salir', route: '/logout', icon: 'log-out' }
+        { label: 'Ayuda', route: '/ayuda', icon: 'help' },
+        { label: 'Salir', route: '/logout', icon: 'logout' }
       ]
     }
   ];
 
+  constructor(public router: Router) {}
 
-  toggleSubmenu(item: MenuItem): void {
+  toggleSubmenu(item: MenuItem, event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
     item.expanded = !item.expanded;
   }
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
+    if (this.isMobile) {
+      this.closeSidebar.emit();
+    }
+  }
+
+  isActive(route: string): boolean {
+    return this.router.url === route || this.router.url.startsWith(route + '/');
+  }
+
+  onCloseSidebar(): void {
+    this.closeSidebar.emit();
   }
 }

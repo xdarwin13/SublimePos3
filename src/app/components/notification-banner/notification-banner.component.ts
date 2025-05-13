@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './notification-banner.component.css'
 })
 export class NotificationBannerComponent {
-  title = 'Sublime POS 3 - Punto de venta gratuito creado por Parzibyte';
-  donationUrl = 'https://parzibyte.me/blog/donaciones/';
-  blogUrl = 'https://parzibyte.me/blog';
-  infoUrl = 'https://parzibyte.me/blog';
+  title = 'Sublime POS 3 - Punto de venta gratuito creado por xDarwinpm';
+  donationUrl = 'https://xdarwinpm.com/donaciones';
+  blogUrl = 'https://xdarwinpm.com/blog';
+  infoUrl = 'https://xdarwinpm.com/faq';
 }

@@ -1,50 +1,50 @@
 <div class="escritorio-container">
-    <div class="financial-summary">
-      <div *ngFor="let item of financialSummary" class="summary-card" [ngClass]="'card-' + item.color">
-        <div class="card-amount">$ {{ item.amount.toFixed(2) }}</div>
-        <div class="card-title">{{ item.title }}</div>
+  <div class="financial-summary">
+    <div *ngFor="let item of financialSummary" class="summary-card" [ngClass]="'card-' + item.color">
+      <div class="card-amount">$ {{ item.amount.toFixed(2) }}</div>
+      <div class="card-title">{{ item.title }}</div>
+    </div>
+  </div>
+
+  <app-notification-banner></app-notification-banner>
+
+  <div class="charts-container">
+    <div class="chart-row">
+      <div class="chart-card">
+        <h3>Ventas de Mayo</h3>
+        <div class="chart-placeholder">
+          <!-- Chart would go here -->
+          <div class="empty-chart">No hay datos para mostrar</div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Ventas por año</h3>
+        <div class="chart-placeholder">
+          <!-- Chart would go here -->
+          <div class="empty-chart">No hay datos para mostrar</div>
+        </div>
       </div>
     </div>
-  
-    <app-notification-banner></app-notification-banner>
-  
-    <div class="charts-container">
-      <div class="chart-row">
-        <div class="chart-card">
-          <h3>Ventas de Mayo</h3>
-          <div class="chart-placeholder">
-            <!-- Chart would go here -->
-            <div class="empty-chart">No hay datos para mostrar</div>
-          </div>
-        </div>
-        <div class="chart-card">
-          <h3>Ventas por año</h3>
-          <div class="chart-placeholder">
-            <!-- Chart would go here -->
-            <div class="empty-chart">No hay datos para mostrar</div>
-          </div>
+
+    <div class="stats-row">
+      <div class="stats-card">
+        <h3>Productos más vendidos</h3>
+        <div *ngIf="topProducts.length === 0" class="empty-stats">
+          No hay registros en el período
         </div>
       </div>
-  
-      <div class="stats-row">
-        <div class="stats-card">
-          <h3>Productos más vendidos</h3>
-          <div *ngIf="topProducts.length === 0" class="empty-stats">
-            No hay registros en el período
-          </div>
+      <div class="stats-card">
+        <h3>Clientes frecuentes</h3>
+        <div *ngIf="topClients.length === 0" class="empty-stats">
+          Muy pronto...
         </div>
-        <div class="stats-card">
-          <h3>Clientes frecuentes</h3>
-          <div *ngIf="topClients.length === 0" class="empty-stats">
-            Muy pronto...
-          </div>
-        </div>
-        <div class="stats-card">
-          <h3>Top cajeros</h3>
-          <div *ngIf="topCashiers.length === 0" class="empty-stats">
-            Muy pronto...
-          </div>
+      </div>
+      <div class="stats-card">
+        <h3>Top cajeros</h3>
+        <div *ngIf="topCashiers.length === 0" class="empty-stats">
+          Muy pronto...
         </div>
       </div>
     </div>
   </div>
+</div>

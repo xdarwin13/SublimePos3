@@ -1,10 +1,17 @@
 <header class="header">
+  <div class="header-left">
+    <button class="menu-toggle" (click)="onToggleSidebar()">
+      <span class="material-icons">{{ sidebarOpen ? 'menu_open' : 'menu' }}</span>
+    </button>
     <div class="section-title">
       <span class="main-title">{{ currentSection }}</span>
-      <span *ngIf="currentSubsection" class="subsection-title">- {{ currentSubsection }}</span>
+      <span *ngIf="currentSubsection" class="subsection-title" [class.mobile]="isMobile">
+        {{ isMobile ? '' : '- ' }}{{ currentSubsection }}
+      </span>
     </div>
-    <div class="user-info">
-      <span>Hola, {{ username }} </span>
-      <span class="user-icon">👤</span>
-    </div>
-  </header>
+  </div>
+  <div class="user-info">
+    <span class="username">Hola, {{ username }} </span>
+    <span class="material-icons user-icon">person</span>
+  </div>
+</header>

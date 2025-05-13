@@ -1,14 +1,14 @@
 <div class="notification-banner">
-    <div class="banner-icon">✓</div>
-    <div class="banner-content">
-      <div>{{ title }}</div>
-      <div class="banner-details">
-        Si estás disfrutando el programa, considera hacer una donación en: 
-        <a [href]="donationUrl" target="_blank">{{ donationUrl }}</a>. 
-        También te invito a visitar <a [href]="blogUrl" target="_blank">mi blog</a>
-      </div>
-      <div class="banner-details">
-        Nota: puedes remover este mensaje y si por alguna razón el mismo tiempo que aparece el desarrollo del software. Más información <a [href]="infoUrl" target="_blank">aquí</a>
-      </div>
+  <div class="banner-icon">✓</div>
+  <div class="banner-content">
+    <div class="banner-title">{{ title }}</div>
+    <div class="banner-details">
+      Si estás disfrutando el programa, considera hacer una donación en: 
+      <a [href]="donationUrl" target="_blank" class="banner-link">{{ donationUrl }}</a>. 
+      También te invito a visitar <a [href]="blogUrl" target="_blank" class="banner-link">mi blog</a>
+    </div>
+    <div class="banner-details">
+      Nota: puedes remover este mensaje y si por alguna razón el mismo tiempo que aparece el desarrollo del software. Más información <a [href]="infoUrl" target="_blank" class="banner-link">aquí</a>
     </div>
   </div>
+</div>

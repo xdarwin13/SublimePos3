@@ -20,7 +20,8 @@ import { EscritorioComponent } from './pages/escritorio/escritorio.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { LayoutModule } from '@angular/cdk/layout';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+     LayoutModule,
+     FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

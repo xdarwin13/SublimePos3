@@ -29,7 +29,7 @@ export class DashboardComponent {
       title: 'Ver inventario',
       description: 'Registrar, eliminar o actualizar detalles productos',
       icon: 'list',
-      route: '/inventario'
+      route: '/productos'
     },
     {
       title: 'Mis clientes',

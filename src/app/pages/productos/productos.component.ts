@@ -18,60 +18,34 @@ interface Producto {
   styleUrl: './productos.component.css'
 })
 export class ProductosComponent {
-  productos: Producto[] = [];
-  searchQuery: string = '';
-  categorias: string[] = ['General', 'Electrónica', 'Ropa', 'Alimentos', 'Hogar'];
-  selectedCategoria: string = '';
-
+ searchPlaceholder: string = 'Buscar un producto por su descripción';
+  
   columns = [
     { name: '#', field: 'id' },
-    { name: 'Código', field: 'codigo' },
+    { name: 'Código de barras', field: 'codigo' },
     { name: 'Descripción', field: 'descripcion' },
-    { name: 'Precio Compra', field: 'precioCompra' },
-    { name: 'Precio Venta', field: 'precioVenta' },
+    { name: 'P. compra', field: 'precio_compra' },
+    { name: 'P. venta', field: 'precio_venta' },
+    { name: 'Utilidad', field: 'utilidad' },
     { name: 'Existencia', field: 'existencia' },
-    { name: 'Stock Mínimo', field: 'stock' },
-    { name: 'Categoría', field: 'categoria' },
-    { name: 'Acciones', field: 'acciones' }
+    { name: 'Stock', field: 'stock' },
+    { name: 'Opciones', field: 'opciones' }
   ];
+  
+  products: any[] = [];
 
-  onSearch(): void {
-    console.log('Buscando productos con:', this.searchQuery);
-    // Implementar lógica de búsqueda
-  }
-
-  onFilterByCategory(): void {
-    console.log('Filtrando por categoría:', this.selectedCategoria);
-    // Implementar filtro por categoría
-  }
-
-  onAddProduct(): void {
-    console.log('Añadiendo nuevo producto');
-    // Implementar lógica para añadir producto
-  }
-
-  onEditProduct(producto: Producto): void {
-    console.log('Editando producto:', producto);
-    // Implementar lógica para editar producto
-  }
-
-  onDeleteProduct(producto: Producto): void {
-    console.log('Eliminando producto:', producto);
-    // Implementar lógica para eliminar producto
+  onSearch(query: string): void {
+    console.log('Searching for:', query);
+    // Here you would implement the search logic
   }
 
   exportProducts(): void {
-    console.log('Exportando productos');
-    // Implementar exportación de productos
+    console.log('Exporting products');
+    // Here you would implement the export logic
   }
 
   importProducts(): void {
-    console.log('Importando productos');
-    // Implementar importación de productos
-  }
-
-  printBarcodes(): void {
-    console.log('Imprimiendo códigos de barras');
-    // Implementar impresión de códigos de barras
+    console.log('Importing products');
+    // Here you would implement the import logic
   }
 }

@@ -1,38 +1,48 @@
-<div class="sidebar">
-    <div class="sidebar-header">
-      <h3>{{ storeName }}</h3>
-    </div>
-    <div class="sidebar-menu">
-      <ul>
-        <li *ngFor="let item of menuItems" [class.active]="router.url === item.route">
+<div class="sidebar" [class.collapsed]="collapsed">
+  <div class="sidebar-header">
+    <h3 class="store-name">{{ storeName }}</h3>
+    <button *ngIf="isMobile" class="close-sidebar-btn" (click)="onCloseSidebar()">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+  
+  <div class="sidebar-menu">
+    <ul>
+      <li *ngFor="let item of menuItems" [class.active]="isActive(item.route)">
+        <a 
+          *ngIf="!item.children" 
+          [routerLink]="item.route" 
+          class="menu-item"
+          [title]="collapsed ? item.label : ''"
+          (click)="navigateTo(item.route)"
+        >
+          <span class="menu-icon material-icons">{{ item.icon }}</span>
+          <span class="menu-label">{{ item.label }}</span>
+        </a>
+        
+        <div *ngIf="item.children" class="submenu-container">
           <a 
-            *ngIf="!item.children" 
-            [routerLink]="item.route" 
-            class="menu-item"
+            class="menu-item" 
+            (click)="toggleSubmenu(item, $event)"
+            [title]="collapsed ? item.label : ''"
           >
-            <i class="icon" [ngClass]="'icon-' + item.icon"></i>
-            <span>{{ item.label }}</span>
+            <span class="menu-icon material-icons">{{ item.icon }}</span>
+            <span class="menu-label">{{ item.label }}</span>
+            <span class="submenu-arrow material-icons">
+              {{ item.expanded ? 'expand_less' : 'expand_more' }}
+            </span>
           </a>
           
-          <div *ngIf="item.children" class="submenu-container">
-            <a 
-              class="menu-item" 
-              (click)="toggleSubmenu(item)"
-            >
-              <i class="icon" [ngClass]="'icon-' + item.icon"></i>
-              <span>{{ item.label }}</span>
-              <i class="icon-chevron-down submenu-icon" [class.rotated]="item.expanded"></i>
-            </a>
-            
-            <ul class="submenu" [class.expanded]="item.expanded">
-              <li *ngFor="let child of item.children">
-                <a [routerLink]="child.route" class="submenu-item">
-                  <span>{{ child.label }}</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+          <ul class="submenu" [class.expanded]="item.expanded">
+            <li *ngFor="let child of item.children" [class.active]="isActive(child.route)">
+              <a [routerLink]="child.route" class="submenu-item" (click)="navigateTo(child.route)">
+                <span class="submenu-icon material-icons">{{ child.icon }}</span>
+                <span class="menu-label">{{ child.label }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
+</div>

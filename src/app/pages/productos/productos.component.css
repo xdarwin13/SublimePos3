@@ -1,57 +1,39 @@
-.productos-container {
+.producto-container {
     padding: 20px;
     position: relative;
     min-height: calc(100vh - 120px);
   }
   
-  .search-filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .search-box {
-    flex: 1;
-    min-width: 250px;
-    display: flex;
-  }
-  
-  .search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px 0 0 4px;
-    font-size: 14px;
-  }
-  
-  .search-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: 1px solid #007bff;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-  }
-  
-  .filter-box {
-    width: 200px;
-  }
-  
-  .category-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .productos-table {
-    background-color: white;
+  .products-table {
+    background-color: #fff;
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .pagination-controls {
+    display: flex;
+  }
+  
+  .btn-pagination {
+    background: none;
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-pagination:hover {
+    background-color: #e9ecef;
   }
   
   table {
@@ -68,13 +50,6 @@
   th {
     background-color: #f8f9fa;
     font-weight: 600;
-    position: sticky;
-    top: 0;
-  }
-  
-  .actions-cell {
-    display: flex;
-    gap: 5px;
   }
   
   .btn-action {
@@ -82,6 +57,7 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
+    margin-right: 5px;
     padding: 5px;
     border-radius: 4px;
   }
@@ -95,24 +71,17 @@
   }
   
   .action-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     margin-top: 20px;
   }
   
-  .btn-secondary {
+  .btn-export {
     background: none;
-    border: 1px solid #007bff;
+    border: none;
     color: #007bff;
-    padding: 8px 15px;
-    border-radius: 4px;
     cursor: pointer;
+    padding: 0;
     font-size: 14px;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #f0f7ff;
+    text-decoration: underline;
   }
   
   .btn-floating {
@@ -136,19 +105,4 @@
   
   .btn-floating:hover {
     background-color: #0069d9;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .search-filter-container {
-      flex-direction: column;
-    }
-    
-    .filter-box {
-      width: 100%;
-    }
-    
-    .productos-table {
-      overflow-x: auto;
-    }
   }

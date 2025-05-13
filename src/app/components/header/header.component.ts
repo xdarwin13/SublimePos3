@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +9,20 @@ import { filter } from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
 export class HeaderComponent implements OnInit {
   @Input() username: string = '';
+  @Input() sidebarOpen: boolean = true;
+  @Output() toggleSidebar = new EventEmitter<void>();
+  
   currentSection: string = '';
   currentSubsection: string = '';
+  isMobile = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+  ) {}
 
   ngOnInit(): void {
     this.router.events.pipe(
@@ -24,6 +33,14 @@ export class HeaderComponent implements OnInit {
 
     // Initialize on component load
     this.updateSectionTitle();
+    
+    // Check for mobile view
+    this.breakpointObserver.observe([
+      Breakpoints.HandsetPortrait,
+      Breakpoints.TabletPortrait
+    ]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
   }
 
   updateSectionTitle(): void {
@@ -39,7 +56,7 @@ export class HeaderComponent implements OnInit {
       this.currentSection = 'Empresa';
       this.currentSubsection = 'Clientes';
     } else if (url.includes('/escritorio')) {
-      this.currentSection = 'Sublime POS';
+      this.currentSection = 'Empresa';
       this.currentSubsection = 'Escritorio';
     } else if (url.includes('/graficas')) {
       this.currentSection = 'Sublime POS';
@@ -54,11 +71,18 @@ export class HeaderComponent implements OnInit {
       this.currentSection = 'Sublime POS';
       this.currentSubsection = 'Ventas al contado';
     } else if (url.includes('/inicio')) {
-      this.currentSection = 'Empresa';
+      this.currentSection = 'Sublime POS 3';
       this.currentSubsection = 'Inicio';
+    } else if (url.includes('/productos')) {
+      this.currentSection = 'Empresa';
+      this.currentSubsection = 'Productos';
     } else {
       this.currentSection = 'Sublime POS 3';
       this.currentSubsection = '';
     }
+  }
+
+  onToggleSidebar(): void {
+    this.toggleSidebar.emit();
   }
 }

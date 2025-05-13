@@ -1,107 +1,186 @@
 .escritorio-container {
-    padding: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.financial-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  padding: 15px;
+  border-radius: 4px;
+  color: white;
+}
+
+.card-blue {
+  background-color: #007bff;
+}
+
+.card-purple {
+  background-color: #6f42c1;
+}
+
+.card-yellow {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.card-red {
+  background-color: #dc3545;
+}
+
+.card-amount {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.card-title {
+  font-size: 14px;
+}
+
+.charts-container {
+  margin-top: 20px;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chart-card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.chart-placeholder {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.empty-chart {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.stats-card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stats-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.empty-stats {
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .escritorio-container {
+    padding: 15px;
   }
   
   .financial-summary {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
   }
   
   .summary-card {
-    padding: 15px;
-    border-radius: 4px;
-    color: white;
-  }
-  
-  .card-blue {
-    background-color: #007bff;
-  }
-  
-  .card-purple {
-    background-color: #6f42c1;
-  }
-  
-  .card-yellow {
-    background-color: #ffc107;
-    color: #212529;
-  }
-  
-  .card-red {
-    background-color: #dc3545;
+    padding: 12px;
   }
   
   .card-amount {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 18px;
   }
   
   .card-title {
+    font-size: 12px;
+  }
+  
+  .chart-card, .stats-card {
+    padding: 12px;
+  }
+  
+  .chart-card h3, .stats-card h3 {
     font-size: 14px;
-  }
-  
-  .charts-container {
-    margin-top: 20px;
-  }
-  
-  .chart-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .chart-card {
-    background-color: white;
-    border-radius: 4px;
-    padding: 15px;
-  }
-  
-  .chart-card h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 16px;
   }
   
   .chart-placeholder {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    border-radius: 4px;
+    height: 180px;
   }
   
-  .empty-chart {
-    color: #6c757d;
-    font-size: 14px;
+  .empty-chart, .empty-stats {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .escritorio-container {
+    padding: 10px;
   }
   
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  .financial-summary {
+    grid-template-columns: 1fr 1fr;
   }
   
-  .stats-card {
-    background-color: white;
-    border-radius: 4px;
-    padding: 15px;
+  .summary-card {
+    padding: 10px;
   }
   
-  .stats-card h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
+  .card-amount {
     font-size: 16px;
   }
   
-  .empty-stats {
-    padding: 20px;
-    text-align: center;
-    color: #6c757d;
-    font-size: 14px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
+  .card-title {
+    font-size: 11px;
   }
+  
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-placeholder {
+    height: 150px;
+  }
+}

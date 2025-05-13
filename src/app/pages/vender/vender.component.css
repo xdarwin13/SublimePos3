@@ -1,55 +1,109 @@
 .vender-container {
-    padding: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.total-section {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.total-section h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.products-table-container {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.products-table {
+  min-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.btn-action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.btn-edit:hover {
+  background-color: #e9ecef;
+}
+
+.btn-delete:hover {
+  background-color: #f8d7da;
+}
+
+@media (max-width: 768px) {
+  .vender-container {
+    padding: 15px;
   }
   
   .total-section {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+    padding: 12px;
   }
   
   .total-section h3 {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  .products-table {
-    background-color: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
+    font-size: 16px;
   }
   
   th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #e9ecef;
-  }
-  
-  th {
-    background-color: #f8f9fa;
-    font-weight: 600;
+    padding: 10px 12px;
+    font-size: 14px;
   }
   
   .btn-action {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 5px;
-    padding: 5px;
-    border-radius: 4px;
+    font-size: 14px;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .vender-container {
+    padding: 10px;
   }
   
-  .btn-edit:hover {
-    background-color: #e9ecef;
+  .total-section h3 {
+    font-size: 14px;
   }
   
-  .btn-delete:hover {
-    background-color: #f8d7da;
+  th, td {
+    padding: 8px 10px;
+    font-size: 12px;
   }
+  
+  .btn-action {
+    font-size: 12px;
+    padding: 3px;
+  }
+}
