@@ -183,7 +183,7 @@ li.active > a .submenu-icon {
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .sidebar:not(.collapsed) {
-    width: 220px;
+    width: 270px;
   }
   
   .menu-item {
